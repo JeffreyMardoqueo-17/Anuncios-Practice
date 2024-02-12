@@ -114,5 +114,28 @@ namespace AdsProject.DataAccessLogic
             return query;
         }
 
+        public static async Task<List<Ad>> SearchAsyn(Ad ad)
+        {
+            var ads = new List<Ad>();
+            using (var bdContext = new ContextoDB())
+            {
+                var select = bdContext.Ad.AsQueryable();
+                select = QuerySelect(select, ad);
+                ads = await select.ToListAsync();
+            }
+            return ads;
+        }
+
+        public static async Task<List<Ad>> SearchIncludeCategoryAsync(Ad ad)
+        {
+            var ads = new List<Ad>();
+            using (var bdContext = new ContextoDB())
+            {
+                var select = bdContext.Ad.AsQueryable();
+                select = QuerySelect(select, ad).Include(a => a.Category).AsQueryable();
+                ads = await select.ToListAsync();
+            }
+            return ads;
+        }
     }
 }
