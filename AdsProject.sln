@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdsProyect.BussinessEntities", "AdsProyect.BussinessEntities\AdsProyect.BussinessEntities.csproj", "{6A3283E5-AA61-43E9-9785-FD3E7899966C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsProyect.BussinessEntities", "AdsProyect.BussinessEntities\AdsProyect.BussinessEntities.csproj", "{6A3283E5-AA61-43E9-9785-FD3E7899966C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdsProject.DataAccessLogic", "AdsProject.DataAccessLogic\AdsProject.DataAccessLogic.csproj", "{2F8F45B3-A2C5-4B8A-9C5A-87D89EED096A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsProject.DataAccessLogic", "AdsProject.DataAccessLogic\AdsProject.DataAccessLogic.csproj", "{2F8F45B3-A2C5-4B8A-9C5A-87D89EED096A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdsPoject.BussinessLogic", "AdsPoject.BussinessLogic\AdsPoject.BussinessLogic.csproj", "{0C475C69-1523-4D6E-83AD-24323242C6C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsPoject.BussinessLogic", "AdsPoject.BussinessLogic\AdsPoject.BussinessLogic.csproj", "{0C475C69-1523-4D6E-83AD-24323242C6C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdsProject.UserInterface", "AdsProject.UserInterface\AdsProject.UserInterface.csproj", "{AE2933EB-D7A4-46E8-8DCE-81B210685EEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdsProject.UserInterfacee", "AdsProject.UserInterfacee\AdsProject.UserInterfacee.csproj", "{A25CB702-BBFA-4065-BB77-CCC75CE2ACA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{0C475C69-1523-4D6E-83AD-24323242C6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C475C69-1523-4D6E-83AD-24323242C6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C475C69-1523-4D6E-83AD-24323242C6C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE2933EB-D7A4-46E8-8DCE-81B210685EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE2933EB-D7A4-46E8-8DCE-81B210685EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE2933EB-D7A4-46E8-8DCE-81B210685EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE2933EB-D7A4-46E8-8DCE-81B210685EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A25CB702-BBFA-4065-BB77-CCC75CE2ACA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25CB702-BBFA-4065-BB77-CCC75CE2ACA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25CB702-BBFA-4065-BB77-CCC75CE2ACA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25CB702-BBFA-4065-BB77-CCC75CE2ACA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
