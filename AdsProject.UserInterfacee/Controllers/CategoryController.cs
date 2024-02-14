@@ -23,7 +23,7 @@ namespace AdsProject.UserInterfacee.Controllers
             var categories = await categoryBL.SearchAsync(category);
             ViewBag.Top = category.Top_Aux;
 
-            return View();
+            return View(categories);
         }
 
         // GET: CategoryController/Details/5
