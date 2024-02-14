@@ -51,6 +51,7 @@ namespace AdsProject.DataAccessLogic
             }
             return result;
         }
+
         public static async Task<Category> GetByIdAsync(Category category)
         {
             var categoryDB = new Category();
