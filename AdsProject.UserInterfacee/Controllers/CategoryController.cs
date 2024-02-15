@@ -59,23 +59,28 @@ namespace AdsProject.UserInterfacee.Controllers
         }
 
         // GET: CategoryController/Edit/5
-        public ActionResult Edit(int id)
+        //accion que muestra el formulario con los datos cargados para modificar
+        public async Task<ActionResult> Edit(int id)
         {
-            return View();
+            var category = await categoryBL.GetByIdAsync(new Category { Id = id });
+            return View(category);
         }
 
         // POST: CategoryController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        //accion que recibe los datos modificados
+        public async Task<ActionResult> Edit(int id, Category category)
         {
             try
             {
+                int result = await categoryBL.UpdateAsync(category);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                ViewBag.Error = ex.Message;
+                return View(category);
             }
         }
 
