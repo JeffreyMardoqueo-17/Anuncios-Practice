@@ -27,50 +27,60 @@ namespace AdsProject.UserInterfacee.Controllers
         }
 
         // GET: CategoryController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            var category = await categoryBL.GetByIdAsync(new Category { Id = id});
+            return View(category);
         }
 
         // GET: CategoryController/Create
+        //accion que muerta el formulario para crear una nueva categoria
         public ActionResult Create()
         {
+            ViewBag.Error = "";
             return View();
         }
-
+        //accion que recibe los datos del formulario y los envia a la BD
         // POST: CategoryController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(Category category)
         {
             try
             {
+                int result = await categoryBL.CreateAsync(category);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
+                ViewBag.Error = ex.Message;
                 return View();
             }
         }
 
         // GET: CategoryController/Edit/5
-        public ActionResult Edit(int id)
+        //accion que muestra el formulario con los datos cargados para modificar
+        public async Task<ActionResult> Edit(int id)
         {
-            return View();
+            var category = await categoryBL.GetByIdAsync(new Category { Id = id });
+            return View(category);
         }
 
         // POST: CategoryController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        //accion que recibe los datos modificados
+        public async Task<ActionResult> Edit(int id, Category category)
         {
             try
             {
+                int result = await categoryBL.UpdateAsync(category);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                ViewBag.Error = ex.Message;
+                return View(category);
             }
         }
 
