@@ -85,23 +85,26 @@ namespace AdsProject.UserInterfacee.Controllers
         }
 
         // GET: CategoryController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            var category = await categoryBL.GetByIdAsync(new Category { Id = id });
+            return View(category);
         }
 
         // POST: CategoryController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Delete(int id, Category category)
         {
             try
             {
+                int result = await categoryBL.DeleteAsync(category);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                ViewBag.Error = ex.Message;
+                return View(category);
             }
         }
     }
